@@ -3,6 +3,7 @@ import axiosWithAuth from "../axios/axiosWithAuth";
 
 import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
+import { Flex } from "@chakra-ui/core";
 
 const BubblePage = () => {
   const [colorList, setColorList] = useState([]);
@@ -18,8 +19,10 @@ const BubblePage = () => {
 
   return (
     <>
-      <ColorList colors={colorList} updateColors={setColorList} />
-      <Bubbles colors={colorList} />
+      <Flex>
+        <ColorList colors={colorList} updateColors={setColorList} />
+        <Bubbles colors={colorList} />
+      </Flex>
     </>
   );
 };

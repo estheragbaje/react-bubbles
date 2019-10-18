@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {
+  Heading,
+  Text,
+  FormControl,
+  FormLabel,
+  Input,
+  Stack,
+  Button
+} from "@chakra-ui/core";
 
 const Login = props => {
   // make a post request to retrieve a token from the api
@@ -32,15 +41,24 @@ const Login = props => {
   };
   return (
     <>
-      <h1>Welcome to the Bubble App!</h1>
-      <p>Login Here</p>
-      <form onSubmit={submitUserDetails}>
-        <label>Username</label>
-        <input value={username} onChange={handleChange} type="text" />
-        <label>Password</label>
-        <input value={password} onChange={handleChange2} type="password" />
-        <button disabled={isLoading}>Submit</button>
-      </form>
+      <Heading textAlign="center">Welcome to the Bubble App!</Heading>
+      <Text>Login Here</Text>
+      <Stack mt="50px" marginX="500px">
+        <form onSubmit={submitUserDetails}>
+          <FormLabel>Username</FormLabel>
+          <Input value={username} onChange={handleChange} type="text" />
+          <FormLabel marginTop="20px">Password</FormLabel>
+          <Input value={password} onChange={handleChange2} type="password" />
+          <Button
+            type="submit"
+            bg="#dd9a99"
+            marginTop="30px"
+            disabled={isLoading}
+          >
+            Submit
+          </Button>
+        </form>
+      </Stack>
     </>
   );
 };
