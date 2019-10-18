@@ -26,15 +26,19 @@ const ColorList = ({ colors, updateColors }) => {
       .then(res => {
         console.log(res.data);
 
-        const filteredColors = colors.filter(item => {
-          item.id !== colorToEdit.id;
-        });
+        // const filteredColors = colors.filter(item => {
+        //   item.id !== colorToEdit.id;
+        // });
+
+        const filteredColors = colors.filter(
+          item => item.id !== colorToEdit.id
+        );
 
         const newColors = filteredColors.concat(colorToEdit);
         updateColors(newColors);
         setEditing(false);
       })
-      .catch();
+      .catch(err => console.log(err));
   };
 
   const deleteColor = color => {
