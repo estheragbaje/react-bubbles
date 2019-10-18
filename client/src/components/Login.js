@@ -34,7 +34,13 @@ const Login = props => {
     <>
       <h1>Welcome to the Bubble App!</h1>
       <p>Login Here</p>
-      <form></form>
+      <form onSubmit={submitUserDetails}>
+        <label>Username</label>
+        <input value={username} onChange={handleChange} type="text" />
+        <label>Password</label>
+        <input value={password} onChange={handleChange2} type="password" />
+        <button disabled={isLoading}>Submit</button>
+      </form>
     </>
   );
 };
