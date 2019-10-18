@@ -38,7 +38,13 @@ i. Use HTTPS
 ii. Implement Authentications
 
 - [ ] Describe how web servers work.
+      The web servers work in the following way:
+      i. Browser Resolves the Domain Name to an IP Address
+      ii. Browser Requests the Full URL
+      iii. Web Server sends the Requested Page
+      iv. Browser Displays the Webpage
 
+      
 
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
