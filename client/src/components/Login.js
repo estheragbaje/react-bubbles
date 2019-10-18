@@ -23,7 +23,7 @@ const Login = props => {
     axios
       .post("http://localhost:5006/api/login", { username, password })
       .then(res => {
-        debugger;
+        // debugger;
         window.localStorage.setItem("token", res.data.payload);
         props.history.push("/bubbles");
         setIsLoading(false);
