@@ -50,6 +50,7 @@ const Login = props => {
           <FormLabel marginTop="20px">Password</FormLabel>
           <Input value={password} onChange={handleChange2} type="password" />
           <Button
+            paddingX="155px"
             type="submit"
             bg="#dd9a99"
             marginTop="30px"
