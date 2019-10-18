@@ -44,9 +44,12 @@ ii. Implement Authentications
       iii. Web Server sends the Requested Page
       iv. Browser Displays the Webpage
 
-      
+* [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
-- [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+POST: Creates a new resource.
+GET: Retrieves a resource.
+PUT: Updates an existing resource.
+DELETE: Deletes a resource.
 
 ## Project Set Up
 
