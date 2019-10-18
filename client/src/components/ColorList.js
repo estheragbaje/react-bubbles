@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import axiosWithAuth from "../axios/axiosWithAuth";
 
 const initialColor = {
@@ -7,7 +8,7 @@ const initialColor = {
 };
 
 const ColorList = ({ colors, updateColors }) => {
-  console.log(colors);
+  // console.log(colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
 
@@ -21,19 +22,13 @@ const ColorList = ({ colors, updateColors }) => {
     // Make a put request to save your updated color
     // think about where will you get the id from...
     // where is is saved right now?
+    // console.log(colorToEdit);
     axiosWithAuth()
-      .put(`http://localhost:5006/api/colors/${colorToEdit.id}`, colorToEdit)
+      .put(`http://localhost:5005/api/colors/${colorToEdit.id}`, colorToEdit)
       .then(res => {
-        console.log("response from put", res.data);
-
-        // const filteredColors = colors.filter(item => {
-        //   item.id !== colorToEdit.id;
-        // });
-
         const filteredColors = colors.filter(
           item => item.id !== colorToEdit.id
         );
-
         const newColors = filteredColors.concat(colorToEdit);
         updateColors(newColors);
         setEditing(false);
@@ -43,13 +38,13 @@ const ColorList = ({ colors, updateColors }) => {
 
   const deleteColor = color => {
     // make a delete request to delete this color
-
+    // debugger;
     axiosWithAuth()
-      .delete(`http://localhost:5006/api/colors/${color.id}`)
+      .delete(`http://localhost:5005/api/colors/${color.id}`)
       .then(res => {
-        console.log("response from deleteColor", res.data);
-        const deletedColor = colors.filter(item => item.id !== color.id);
-        updateColors(deletedColor);
+        // debugger;
+        const deletedColors = colors.filter(item => item.id !== color.id);
+        updateColors(deletedColors);
       })
       .catch(err => console.log(err));
   };
@@ -111,8 +106,6 @@ const ColorList = ({ colors, updateColors }) => {
       )}
       <div className="spacer" />
       {/* stretch - build another form here to add a color */}
-
-      
     </div>
   );
 };
